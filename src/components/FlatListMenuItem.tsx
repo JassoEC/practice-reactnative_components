@@ -15,10 +15,10 @@ export const FlatListMenuItem = ({item}: Props) => {
       activeOpacity={0.8}
       onPress={() => navigation.navigate(item.component)}>
       <View style={styles.container}>
-        <Icon name={item.icon} color="grey" size={20} />
+        <Icon name={item.icon} color="#5856D6" size={20} />
         <Text style={styles.itemText}>{`${item.name}`}</Text>
         <View style={{flex: 1}} />
-        <Icon name="chevron-forward-outline" color="grey" size={20} />
+        <Icon name="chevron-forward-outline" color="#5856D6" size={20} />
       </View>
     </TouchableOpacity>
   );
