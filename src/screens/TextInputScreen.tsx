@@ -5,19 +5,24 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
+  Text,
   TextInput,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import {CustomSwitch} from '../components/CustomSwitch';
 import {Header} from '../components/Header';
+import {useForm} from '../hooks/useForm';
 import {styles} from '../theme/appTheme';
 
 export const TextInputScreen = () => {
-  const [form, setForm] = useState({
+  const {form, onChange, isSubscribed} = useForm({
     name: '',
     email: '',
     phone: '',
+    isSubscribed: false,
   });
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
@@ -28,29 +33,31 @@ export const TextInputScreen = () => {
             <TextInput
               style={stylesLocal.textInput}
               placeholder="Nombre"
-              onChangeText={name => {
-                setForm({...form, name});
-              }}
+              onChangeText={name => onChange(name, 'name')}
               autoCorrect={false}
               autoCapitalize="words"
             />
             <TextInput
               style={stylesLocal.textInput}
               placeholder="Email"
-              onChangeText={email => {
-                setForm({...form, email});
-              }}
+              onChangeText={email => onChange(email, 'email')}
               autoCapitalize="none"
               keyboardType="email-address"
             />
-            <Header title={JSON.stringify(form, null, 3)} />
-            <Header title={JSON.stringify(form, null, 3)} />
+
             <TextInput
               style={stylesLocal.textInput}
               placeholder="Teléfono"
-              onChangeText={phone => setForm({...form, phone})}
+              onChangeText={phone => onChange(phone, 'phone')}
               keyboardType="phone-pad"
             />
+            <View style={styles.switchRow}>
+              <Text style={styles.switchText}>Suscribirse</Text>
+              <CustomSwitch
+                isOn={isSubscribed}
+                onChange={(value: boolean) => onChange(value, 'isSubscribed')}
+              />
+            </View>
             <Header title={JSON.stringify(form, null, 3)} />
             <View style={{height: 100}} />
           </View>
