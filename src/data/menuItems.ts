@@ -36,4 +36,9 @@ export const menuItems: MenuItem[] = [
     icon: 'list-outline',
     component: 'SectionListScreen',
   },
+  {
+    name: 'ModalScreen Screen',
+    icon: 'car-outline',
+    component: 'ModalScreen',
+  },
 ];
