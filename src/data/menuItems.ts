@@ -41,4 +41,9 @@ export const menuItems: MenuItem[] = [
     icon: 'car-outline',
     component: 'ModalScreen',
   },
+  {
+    name: 'InfiniteScroll Screen',
+    icon: 'musical-note-outline',
+    component: 'InfiniteScrollScreen',
+  },
 ];
