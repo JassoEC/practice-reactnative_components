@@ -32,7 +32,7 @@ export const menuItems: MenuItem[] = [
     component: 'PullToRefreshScreen',
   },
   {
-    name: 'SectionListScreen Screen',
+    name: 'SectionList Screen',
     icon: 'list-outline',
     component: 'SectionListScreen',
   },
@@ -50,5 +50,10 @@ export const menuItems: MenuItem[] = [
     name: 'Slides Screen',
     icon: 'flower-outline',
     component: 'SlidesScreen',
+  },
+  {
+    name: 'Change Theme Screen',
+    icon: 'contrast-outline',
+    component: 'ChangeThemeScreen',
   },
 ];
