@@ -18,9 +18,7 @@ export const InfiniteScrollScreen = () => {
     for (let i = 0; i < 5; i++) {
       newArray[i] = numbers.length + i;
     }
-    setTimeout(() => {
-      setNumbers([...numbers, ...newArray]);
-    }, 1500);
+    setNumbers([...numbers, ...newArray]);
   };
 
   return (

@@ -10,13 +10,14 @@ import {PullToRefreshScreen} from '../screens/PullToRefreshScreen';
 import {SectionListScreen} from '../screens/SectinListScreen';
 import {ModalScreen} from '../screens/ModalScreen';
 import {InfiniteScrollScreen} from '../screens/InfiniteScrollScreen';
+import {SlidesScreen} from '../screens/SlideScreen';
 
 const Stack = createStackNavigator();
 
 export const StackNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="Animation101Screen" component={Animation101Screen} />
       <Stack.Screen name="Animation102Screen" component={Animation102Screen} />
       <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
@@ -24,6 +25,7 @@ export const StackNavigation = () => {
       <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
       <Stack.Screen name="SectionListScreen" component={SectionListScreen} />
       <Stack.Screen name="ModalScreen" component={ModalScreen} />
+      <Stack.Screen name="SlidesScreen" component={SlidesScreen} />
       <Stack.Screen
         name="InfiniteScrollScreen"
         component={InfiniteScrollScreen}
